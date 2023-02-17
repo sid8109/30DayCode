@@ -1,6 +1,24 @@
 import java.util.*;
 
 public class ZigZag_Array {
+    public static void zigZag(int a[], int n){
+        for(int i = 0; i < n - 1; i++) {
+            if(i % 2 == 0) {
+                if(a[i] > a[i + 1]) {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
+            } else {
+                if(a[i] < a[i + 1]) {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
+            }
+        }
+    }
+
     public static void main(String arg[]) {
         Scanner sc = new Scanner(System.in);
         int n;
@@ -12,14 +30,10 @@ public class ZigZag_Array {
             arr[i] = sc.nextInt();
         }
 
-        int ans[] = new int[n];
-        int k = 0;
-        for(int i = 0; i <= n / 2; i++) {
-            ans[k++] = arr[i];
-            ans[k++] = arr[n - i - 1];
-        }
+        zigZag(arr, arr.length);
+
         for(int i = 0; i < n; i++) {
-            System.out.print(ans[i] + " ");
+            System.out.print(arr[i] + " ");
         }
     }   
 }
