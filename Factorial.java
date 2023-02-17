@@ -15,5 +15,17 @@ public class Factorial {
         System.out.println("Enter a number : ");
         n = sc.nextInt();
         System.out.println(fact(n));
+
+        // This is a better method
+        int ans[] = new int[n];
+        ans[0] = 1;
+
+        for(int i = 2; i <= n; i++) {
+            ans[i - 1] = i * ans[i - 2];
+        }
+
+        for(int i = 0; i < n; i++) {
+            System.out.print(ans[i] + " ");
+        }
     }
 }
