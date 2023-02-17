@@ -3,9 +3,9 @@ import java.util.*;
 public class Temp {
     public static void main(String arg[]) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
         System.out.println("Enter the temperature : ");
-        t = sc.nextInt();
-        
+        int t = sc.nextInt();
+        System.out.println("Kelvin = " + (t + 273.15));
+        System.out.println("Fahrenheit = " + (t * 1.8 + 32.0));
     } 
 }
